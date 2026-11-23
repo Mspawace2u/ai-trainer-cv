@@ -201,7 +201,19 @@ html[data-theme="light"] .bottom .substack-signoff {color:#13131b!important;}
  .bottom .footer-note .footer-dot {color:var(--purple)!important;-webkit-text-fill-color:var(--purple)!important;}
 }
 </style>
-</head>
+<style id="cv5-mobile-print-isolation">
+/* iOS Safari must not treat letter sheets as viewport-width cards when printing. */
+@media print {
+ html,body{width:8.5in!important;min-width:8.5in!important;max-width:8.5in!important;margin:0!important;padding:0!important;overflow:visible!important}
+ .toolbar{display:none!important}
+ .sheet{display:block!important;position:relative!important;width:8.5in!important;min-width:8.5in!important;max-width:8.5in!important;height:11in!important;min-height:11in!important;max-height:11in!important;overflow:hidden!important;box-sizing:border-box!important;margin:0!important;break-inside:avoid!important;page-break-inside:avoid!important;page-break-after:always!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .sheet:last-of-type{page-break-after:auto!important}
+ .sheet .content{padding:.39in .48in 0!important}
+ .sheet .bottom{position:absolute!important;left:.48in!important;right:.48in!important;bottom:.36in!important;margin:0!important}
+ .page-two{break-before:page!important;page-break-before:always!important}
+ .page-two .content{padding-top:.50in!important}
+}
+</style></head>
 <body>
 <div aria-label="Resume display and print options" class="toolbar"><div class="toolbar-inner"><small>PW / CV5 · EXPERT OPERATIONS</small><div class="actions"><button aria-label="Toggle screen theme" class="ui-btn" id="themeBtn" type="button">☼ LIGHT VIEW</button><button aria-label="Toggle print theme" class="ui-btn" id="printThemeBtn" type="button">PDF: LIGHT</button><button class="ui-btn primary" id="printBtn" type="button">↗ PRINT / SAVE PDF</button></div></div></div>
 <article aria-label="Patty Woods resume" class="sheet"><div class="content">
@@ -213,7 +225,7 @@ html[data-theme="light"] .bottom .substack-signoff {color:#13131b!important;}
 </div><footer class="bottom"><span><a href="https://lab.pattywoods.cc">Selected portfolio: lab.pattywoods.cc</a></span><span class="footer-note">THINK BOT<span class="footer-dot">.</span> SPEAK HUMAN<span class="footer-dot">.</span></span></footer></article><article aria-label="Patty Woods resume page two" class="sheet page-two"><div class="content"><div class="keep" style="margin-top:12px"><div class="job-head"><h3>Earlier Operations, Sales &amp; Client-Facing Roles</h3><span class="date">2001 – 2011</span></div><p class="mini">Operations, sales support, marketing, customer service, and team leadership across healthcare, financial services, education, and creative environments, with emphasis on accurate execution, process improvement, and high-trust customer interactions.</p></div><section class="section keep"><h2 class="section-title">04 <span class="slash">/</span> Systems &amp; platforms</h2><div class="systems"><strong>CRM / Client Operations:</strong> Dubsado · Keap · ActiveCampaign · GoHighLevel · Custom no-code CRM systems · Notion<br/><strong>Commerce / Revenue:</strong> ThriveCart · Billing and payment workflows · Sales funnel infrastructure<br/><strong>Connected Workflows:</strong> Project tracking · Ticketing · Customer onboarding · Lifecycle and marketing automation<br/><strong>Build / Automation:</strong> Airtable · Asana · ClickUp · Zapier / Make · APIs / Webhooks · AI-assisted workflow and agent design</div></section><section class="section keep"><h2 class="section-title">05 <span class="slash">/</span> Education</h2><p class="mini"><strong>Bachelor of Arts, Journalism</strong> · University of Iowa</p></section></div><footer class="bottom"><span><a href="https://lab.pattywoods.cc">Selected portfolio: lab.pattywoods.cc</a></span><span class="footer-note">THINK BOT<span class="footer-dot">.</span> SPEAK HUMAN<span class="footer-dot">.</span></span></footer></article>
 <p class="print-note">SCREEN: switch between dark and light · PDF: choose light or dark, then Print / Save PDF · In Chrome, enable “Background graphics” to preserve accent styling.</p>
 <script>
-(function(){const root=document.documentElement,theme=document.getElementById('themeBtn'),pdf=document.getElementById('printThemeBtn');theme.addEventListener('click',()=>{const light=root.dataset.theme==='light';root.dataset.theme=light?'dark':'light';theme.textContent=light?'☼ LIGHT VIEW':'☾ DARK VIEW'});pdf.addEventListener('click',()=>{const dark=root.dataset.printTheme==='dark';root.dataset.printTheme=dark?'light':'dark';pdf.textContent='PDF: '+(dark?'LIGHT':'DARK')});document.getElementById('printBtn').addEventListener('click',()=>window.print());})();
+(function(){const root=document.documentElement,theme=document.getElementById('themeBtn'),pdf=document.getElementById('printThemeBtn');theme.addEventListener('click',()=>{const light=root.dataset.theme==='light';root.dataset.theme=light?'dark':'light';theme.textContent=light?'☼ LIGHT VIEW':'☾ DARK VIEW'});pdf.addEventListener('click',()=>{const dark=root.dataset.printTheme==='dark';root.dataset.printTheme=dark?'light':'dark';pdf.textContent='PDF: '+(dark?'LIGHT':'DARK')});document.getElementById('printBtn').addEventListener('click',()=>{const mobile=/iPad|iPhone|iPod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);if(mobile){const file=root.dataset.printTheme==='dark'?'cv5-dark.pdf':'cv5-light.pdf';window.location.assign('/'+file);}else{window.print();}});})();
 </script>
 </body>
 </html>
